@@ -1,0 +1,28 @@
+server:
+  port: 9101
+spring:    # 服务名称， 服务调用时用
+  application:
+    name: microservice-user
+  datasource:
+    url: jdbc:mysql://192.168.22.55:3366/springcloud?characterEncoding=UTF8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+  jpa:
+    show-sql: true #是否打印sql语句
+    generate-ddl: true # 是否自动建表
+    database: mysql # 链接数据库
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8888/eureka,http://127.0.0.1:9999/eureka
+      registry-fetch-interval-seconds: 5 #应用程序从注册表获取信息的时间间隔
+  instance:
+    prefer-ip-address: true # 优先使用该服务的IP地址注册到eureka， 在生产环境开启
+    # 修改续约间隔时间
+    lease-renewal-interval-in-seconds: 5
+    # 修改服务失效时间
+    lease-expiration-duration-in-seconds: 10
