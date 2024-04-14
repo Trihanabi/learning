@@ -8,6 +8,13 @@ spring:    # 服务名称， 服务调用时用
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
+  zipkin:
+    base-url: http://127.0.0.1:9041
+    sender:
+      type: web
+  sleuth: # 日志更新的频率
+    sampler:
+      probability: 1
   jpa:
     show-sql: true #是否打印sql语句
     generate-ddl: true # 是否自动建表

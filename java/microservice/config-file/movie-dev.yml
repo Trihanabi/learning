@@ -3,6 +3,13 @@ server:
 spring:    # 服务名称， 服务调用时用
   application:
     name: microservice-movie
+  zipkin:
+    base-url: http://127.0.0.1:9041
+    sender:
+      type: web
+  sleuth: # 日志更新的频率
+    sampler:
+      probability: 1
 
 eureka:
   client:
