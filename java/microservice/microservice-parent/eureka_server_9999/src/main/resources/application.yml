@@ -1,0 +1,36 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: eureka-server-99
+
+# 单机配置
+#eureka:
+#  client:
+#    fetch-registry: false # 是否需要从eureka获取注册信息
+#    register-with-eureka: false # 是否需要把该服务注册到eureka
+#    service-url: # 暴露注册信息
+#      defaultZone: http://127.0.0.1:${server.port}/eureka
+
+# 集群配置
+#eureka:
+#  client:
+#    fetch-registry: true # 是否需要从eureka获取注册信息
+#    register-with-eureka: true # 是否需要把该服务注册到eureka
+#    service-url: # 暴露注册信息
+#      defaultZone: http://127.0.0.1:9999/eureka
+
+eureka:
+  client:
+    fetch-registry: false # 是否需要从eureka获取注册信息，客户实例应为true
+    register-with-eureka: false # 是否需要把该服务注册到eureka，服务实例应为true
+    service-url: # 暴露注册信息
+      defaultZone: http://127.0.0.1:8888/eureka
+  server:
+    eviction-interval-timer-in-ms: 5000 # 扫描失效服务间隔时间ms
+    enable-self-preservation: false # 自我保护机制
+
+  instance:
+    prefer-ip-address: true # 优先使用ip地址注册到eureka
+    lease-expiration-duration-in-seconds: 90 # 服务失效时间，如果90秒没发送心跳，说明服务失效
+    lease-renewal-interval-in-seconds: 30  # 服务续约（发送心跳）间隔时间

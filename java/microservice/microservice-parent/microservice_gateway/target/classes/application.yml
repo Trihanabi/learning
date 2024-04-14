@@ -1,0 +1,22 @@
+server:
+  port: 8222
+spring:
+  application:
+    name: microservice-gateway
+  zipkin:
+    base-url: http://127.0.0.1:9041
+    sender:
+      type: web
+  sleuth: # 日志更新的频率
+    sampler:
+      probability: 1
+
+
+eureka:
+  client:
+    register-with-eureka: true # 注册
+    fetch-registry: true       # 获取
+    service-url:
+      defaultZone: http://127.0.0.1:8888/eureka,http://127.0.0.1:9999/eureka
+  instance:
+    prefer-ip-address: true

@@ -1,0 +1,20 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: microservice-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Trihanabi/learning.git
+          search-paths: java/microservice/config-file
+# 注册eureka
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8888/eureka
+  instance:
+    prefer-ip-address: true
