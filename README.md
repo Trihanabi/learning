@@ -1,6 +1,6 @@
 # learning
 ### file structure
-learning
+learning  
 └──java: in order to learn java technology stack    
-&thinsp;&emsp;&emsp;├──microservice: spring cloud components   
-&thinsp;&emsp;&emsp;└──mybatis: A framework for simplifying interaction between Java and relational Databases.
+&thinsp;&emsp;&emsp;├──microservice: spring cloud components    
+&thinsp;&emsp;&emsp;└──mybatis: A framework for simplifying interaction between Java and relational Databases.   
